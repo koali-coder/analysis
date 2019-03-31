@@ -82,12 +82,12 @@ public class CommandDecoder extends ReplayingDecoder<CommandDecoder.State>{
             if (digit >= 0 && digit < 10) {
                 result = (result * 10) + digit;
             } else {
-                throw new DecoderException("")
+                throw new DecoderException("");
             }
         } while ((readByte = byteBuf.readByte()) != R);
 
         if ((readByte = byteBuf.readByte()) != N) {
-            throw new DecoderException("")
+            throw new DecoderException("");
         }
         return (t ? -result:result);
     }
